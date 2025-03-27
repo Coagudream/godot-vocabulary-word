@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://ioqthvd1tx7t"]
+
+[ext_resource type="Script" uid="uid://edv56ywsp8ja" path="res://主场景/enemy_manager.gd" id="1_plcxv"]
+[ext_resource type="PackedScene" uid="uid://cgektnb5coyv2" path="res://实体/核心/core.tscn" id="2_mwtco"]
+
+[node name="Main2D" type="Node2D"]
+
+[node name="EnemyManager" type="Node2D" parent="."]
+script = ExtResource("1_plcxv")
+
+[node name="Core" parent="." instance=ExtResource("2_mwtco")]
+position = Vector2(960, 540)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -248.0
+offset_top = -116.0
+offset_right = -68.0
+offset_bottom = -59.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+text = "重新刷怪"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="EnemyManager" method="_on_button_pressed"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b32fj6cae11qr"]
+
+[ext_resource type="Script" uid="uid://b26gdymhl12cy" path="res://实体/输入框/word.gd" id="1_4n8ha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryc0r"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 0.592157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Word" type="LineEdit"]
+offset_right = 200.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxFlat_ryc0r")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_ryc0r")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ryc0r")
+placeholder_text = "直接输入"
+alignment = 1
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+script = ExtResource("1_4n8ha")
