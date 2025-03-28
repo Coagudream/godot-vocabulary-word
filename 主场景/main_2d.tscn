@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ioqthvd1tx7t"]
+[gd_scene load_steps=4 format=3 uid="uid://ioqthvd1tx7t"]
 
 [ext_resource type="Script" uid="uid://edv56ywsp8ja" path="res://主场景/enemy_manager.gd" id="1_plcxv"]
+[ext_resource type="Script" uid="uid://cm8uljy4osqh8" path="res://主场景/round_manager.gd" id="1_vb3l3"]
 [ext_resource type="PackedScene" uid="uid://cgektnb5coyv2" path="res://实体/核心/core.tscn" id="2_mwtco"]
 
 [node name="Main2D" type="Node2D"]
+
+[node name="RoundManager" type="Node" parent="."]
+script = ExtResource("1_vb3l3")
+metadata/_custom_type_script = "uid://cm8uljy4osqh8"
 
 [node name="EnemyManager" type="Node2D" parent="."]
 script = ExtResource("1_plcxv")
@@ -13,19 +18,31 @@ position = Vector2(960, 540)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="RoundAmount" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.5
+offset_right = 72.5
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "sdasd"
+horizontal_alignment = 1
+
 [node name="Button" type="Button" parent="CanvasLayer"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -248.0
-offset_top = -116.0
-offset_right = -68.0
-offset_bottom = -59.0
+offset_left = -192.0
+offset_top = -124.0
+offset_right = -73.0
+offset_bottom = -80.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
-text = "重新刷怪"
 
 [connection signal="pressed" from="CanvasLayer/Button" to="EnemyManager" method="_on_button_pressed"]

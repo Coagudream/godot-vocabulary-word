@@ -25,8 +25,8 @@ var _enemy_translate :Array[String]:
 			await ready
 		for translatione:String in _enemy_translate:
 			translation.text += translatione
-		
-		print(translation.text)
+			translation.text += "\n"
+	
 
 
 func _ready() -> void:
@@ -65,4 +65,5 @@ func show_translation() -> void:
 	)
 
 func die() -> void:
+	reparent(get_tree().root) #因为结合当前方案，将子节点移出敌人管理器，使%RoundAmount 及时更新
 	show_translation()
