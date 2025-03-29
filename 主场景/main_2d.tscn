@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ioqthvd1tx7t"]
+[gd_scene load_steps=5 format=3 uid="uid://ioqthvd1tx7t"]
 
 [ext_resource type="Script" uid="uid://edv56ywsp8ja" path="res://主场景/enemy_manager.gd" id="1_plcxv"]
 [ext_resource type="Script" uid="uid://cm8uljy4osqh8" path="res://主场景/round_manager.gd" id="1_vb3l3"]
 [ext_resource type="PackedScene" uid="uid://cgektnb5coyv2" path="res://实体/核心/core.tscn" id="2_mwtco"]
+[ext_resource type="PackedScene" uid="uid://bbjh0y03ekj1e" path="res://通用/连击系统/combo.tscn" id="4_vkeq7"]
 
 [node name="Main2D" type="Node2D"]
 
@@ -16,6 +17,12 @@ script = ExtResource("1_plcxv")
 [node name="Core" parent="." instance=ExtResource("2_mwtco")]
 position = Vector2(960, 540)
 
+[node name="TextureProgressBar" parent="Core" instance=ExtResource("4_vkeq7")]
+offset_left = -100.0
+offset_top = 61.0
+offset_right = 100.0
+offset_bottom = 71.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RoundAmount" type="Label" parent="CanvasLayer"]
@@ -28,10 +35,10 @@ offset_right = 72.5
 offset_bottom = 56.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 35
-text = "sdasd"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer"]
+process_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0

@@ -47,8 +47,10 @@ func random_position() -> Vector2:
 		var left_add_position = Vector2(viewport_rect.end.x + 50,randf_range(viewport_rect.position.y,viewport_rect.end.y))
 		return left_add_position
 
+##更新子节点的数量
 func updata_child_enemy() -> void:
 	var child_amount:int = get_child_count()
+	print(child_amount)
 	Events.updata_enemy_amount.emit(child_amount)
 
 

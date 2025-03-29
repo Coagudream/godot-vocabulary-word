@@ -55,6 +55,7 @@ func set_enemy_word_and_translation() -> void:
 
 func show_translation() -> void:
 	translation.show()
+	word_text.show()
 	collision_shape_2d.set_deferred("disabled",true)
 	sprite_2d.self_modulate = Color(1.0,1.0,1.0,0.0)
 	var tween:Tween = create_tween()
@@ -65,5 +66,6 @@ func show_translation() -> void:
 	)
 
 func die() -> void:
+	Events.enemy_died.emit()
 	reparent(get_tree().root) #因为结合当前方案，将子节点移出敌人管理器，使%RoundAmount 及时更新
 	show_translation()

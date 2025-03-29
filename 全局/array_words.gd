@@ -1,6 +1,7 @@
 extends Node
 
 var array_words :Array
+var already_words_index: Array[int]
 
 func _ready() -> void:
 	await get_tree().create_timer(0).timeout
@@ -8,6 +9,7 @@ func _ready() -> void:
 
 func request_a_word_dir() -> Dictionary:
 	var random_amount :int = randi_range(0,len(array_words)-1)
+	already_words_index.append(random_amount)
 	var new_words : Dictionary = array_words[random_amount]
 	return new_words
 
