@@ -1,4 +1,4 @@
-class_name RoundManager
+class_name ModeManager
 extends Node
 
 @onready var round_amount: Label = %RoundAmount
@@ -23,13 +23,13 @@ var current_round_amount:float :
 
 
 func _ready() -> void:
-	Events.updata_enemy_amount.connect(current_amount)
+	Events.updata_enemy_amount.connect(updata_current_amount)
 	Events.request_next_round_start.connect(next_round)
 	await get_tree().create_timer(0.5).timeout
 	first_round_start()
 
 
-func current_amount(current_amount:int) -> void:
+func updata_current_amount(current_amount:int) -> void:
 	if current_amount == 0 and is_first_zero :
 		is_first_zero = false
 		return

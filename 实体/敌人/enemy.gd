@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	_move(delta)
 
-func _move(delta: float) -> void:
+func _move(_delta: float) -> void:
 	velocity = (get_viewport_rect().get_center() - global_position ).normalized()* speed * corrected_value
 
 
@@ -47,8 +47,8 @@ func set_enemy_word_and_translation() -> void:
 	
 	var translations : Array = word_dic["translations"]
 	var array_translations :Array[String]
-	for translation in translations:
-		var enemy_translation:String = translation["translation"] +","+ translation["type"]
+	for _translation in translations:
+		var enemy_translation:String = _translation["translation"] +","+ _translation["type"]
 		array_translations.append(enemy_translation)
 	_enemy_translate = array_translations
 
@@ -66,6 +66,6 @@ func show_translation() -> void:
 	)
 
 func die() -> void:
-	Events.enemy_died.emit()
+	Events.enemy_died.emit(_enemy_word,_enemy_translate)
 	reparent(get_tree().root) #因为结合当前方案，将子节点移出敌人管理器，使%RoundAmount 及时更新
 	show_translation()

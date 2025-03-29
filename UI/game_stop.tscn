@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://55cakylwu6o5"]
+
+[ext_resource type="Script" uid="uid://b2wl285lnqtls" path="res://UI/game_stop.gd" id="1_njigu"]
+[ext_resource type="Shader" uid="uid://ddjgobgog5tue" path="res://着色/毛玻璃.gdshader" id="2_7dof3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qyt1w"]
+shader = ExtResource("2_7dof3")
+shader_parameter/lod = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njigu"]
+bg_color = Color(0, 0, 0, 0.631373)
+
+[node name="Stop" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_njigu")
+
+[node name="GameStop" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 70.0
+grow_horizontal = 0
+text = "||"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_qyt1w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_njigu")
+
+[node name="Menu" type="VBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Back" type="Button" parent="PanelContainer/Menu"]
+custom_minimum_size = Vector2(0, 85.115)
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "继续背单词"
+
+[node name="Set" type="Button" parent="PanelContainer/Menu"]
+custom_minimum_size = Vector2(0, 85.115)
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "设置"
+
+[node name="Statistics" type="Button" parent="PanelContainer/Menu"]
+custom_minimum_size = Vector2(0, 85.115)
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "本局统计"
+
+[node name="BackMain" type="Button" parent="PanelContainer/Menu"]
+custom_minimum_size = Vector2(0, 85.115)
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "返回主菜单"
+
+[connection signal="pressed" from="GameStop" to="." method="_on_game_stop_pressed"]
+[connection signal="pressed" from="PanelContainer/Menu/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PanelContainer/Menu/Set" to="." method="_on_set_pressed"]
+[connection signal="pressed" from="PanelContainer/Menu/Statistics" to="." method="_on_statistics_pressed"]
+[connection signal="pressed" from="PanelContainer/Menu/BackMain" to="." method="_on_back_main_pressed"]

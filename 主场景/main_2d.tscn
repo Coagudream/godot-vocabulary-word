@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://ioqthvd1tx7t"]
+[gd_scene load_steps=7 format=3 uid="uid://ioqthvd1tx7t"]
 
 [ext_resource type="Script" uid="uid://edv56ywsp8ja" path="res://主场景/enemy_manager.gd" id="1_plcxv"]
 [ext_resource type="Script" uid="uid://cm8uljy4osqh8" path="res://主场景/round_manager.gd" id="1_vb3l3"]
 [ext_resource type="PackedScene" uid="uid://cgektnb5coyv2" path="res://实体/核心/core.tscn" id="2_mwtco"]
 [ext_resource type="PackedScene" uid="uid://bbjh0y03ekj1e" path="res://通用/连击系统/combo.tscn" id="4_vkeq7"]
+[ext_resource type="Script" uid="uid://17imotkeyaq8" path="res://主场景/run_layer.gd" id="5_iegao"]
+[ext_resource type="PackedScene" uid="uid://55cakylwu6o5" path="res://UI/game_stop.tscn" id="6_fc844"]
 
 [node name="Main2D" type="Node2D"]
 
-[node name="RoundManager" type="Node" parent="."]
+[node name="ModeManager" type="Node" parent="."]
 script = ExtResource("1_vb3l3")
 metadata/_custom_type_script = "uid://cm8uljy4osqh8"
 
@@ -16,6 +18,7 @@ script = ExtResource("1_plcxv")
 
 [node name="Core" parent="." instance=ExtResource("2_mwtco")]
 position = Vector2(960, 540)
+collision_mask = 2
 
 [node name="TextureProgressBar" parent="Core" instance=ExtResource("4_vkeq7")]
 offset_left = -100.0
@@ -23,9 +26,9 @@ offset_top = 61.0
 offset_right = 100.0
 offset_bottom = 71.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="RoundLayer" type="CanvasLayer" parent="."]
 
-[node name="RoundAmount" type="Label" parent="CanvasLayer"]
+[node name="RoundAmount" type="Label" parent="RoundLayer"]
 unique_name_in_owner = true
 anchors_preset = 5
 anchor_left = 0.5
@@ -37,7 +40,10 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="RunLayer" type="CanvasLayer" parent="."]
+script = ExtResource("5_iegao")
+
+[node name="Button" type="Button" parent="RunLayer"]
 process_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
@@ -52,4 +58,7 @@ grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
 
-[connection signal="pressed" from="CanvasLayer/Button" to="EnemyManager" method="_on_button_pressed"]
+[node name="GameStop" parent="RunLayer" instance=ExtResource("6_fc844")]
+mouse_filter = 2
+
+[connection signal="pressed" from="RunLayer/Button" to="EnemyManager" method="_on_button_pressed"]
