@@ -2,7 +2,9 @@ extends Node
 
 var SCENES :Dictionary[String,String] = {
 	"main_ui":"res://UI/main.tscn",
-	"world":"res://主场景/main_2d.tscn"
+	"model_select":"res://UI/mode_selection.tscn",
+	"world":"res://主场景/main_2d.tscn",
+	"load_scene":"res://UI/load_data.tscn"
 }
 
 

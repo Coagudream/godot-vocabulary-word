@@ -50,7 +50,7 @@ func random_position() -> Vector2:
 ##更新子节点的数量
 func updata_child_enemy() -> void:
 	var child_amount:int = get_child_count()
-	print(child_amount)
+	#print(child_amount)
 	Events.updata_enemy_amount.emit(child_amount)
 
 

@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://c06wwxl10oxbn"]
+[gd_scene load_steps=5 format=3 uid="uid://c06wwxl10oxbn"]
 
 [ext_resource type="Script" uid="uid://duw6ho4wvyta8" path="res://UI/main.gd" id="1_vnck2"]
+[ext_resource type="Script" uid="uid://bkpfgo4i4nqos" path="res://UI/changed_iexicon_panel.gd" id="2_emhnf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnck2"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_vnck2"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -60,10 +74,128 @@ text = "设置"
 custom_minimum_size = Vector2(50, 120)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "退出游戏"
+text = "退出"
+
+[node name="Thank" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -143.0
+offset_right = -93.0
+offset_bottom = -72.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "致谢名单"
+
+[node name="ChangedIexicon" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1548.0
+offset_top = 80.0
+offset_right = 1832.0
+offset_bottom = 174.0
+theme_override_font_sizes/font_size = 35
+text = "转换词库
+"
+
+[node name="ChangedIexiconPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -372.0
+offset_top = -356.0
+offset_right = -88.0
+offset_bottom = 123.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vnck2")
+script = ExtResource("2_emhnf")
+
+[node name="MarginContainer" type="MarginContainer" parent="ChangedIexiconPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChangedIexiconPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 57.625)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vnck2")
+text = "初中"
+
+[node name="Button2" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 57.625)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vnck2")
+text = "高中"
+
+[node name="Button3" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 57.625)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_vnck2")
+text = "CET-4"
+
+[node name="Button4" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 57.625)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vnck2")
+text = "CET-6"
+
+[node name="Button5" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 57.625)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vnck2")
+text = "考研"
+
+[node name="Button6" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 57.625)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vnck2")
+text = "托福"
+
+[node name="Button7" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 57.625)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vnck2")
+text = "SAT"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/Statistics" to="." method="_on_statistics_pressed"]
 [connection signal="pressed" from="VBoxContainer/Set" to="." method="_on_set_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ChangedIexicon" to="." method="_on_changed_iexicon_pressed"]
+[connection signal="pressed" from="ChangedIexiconPanel/MarginContainer/VBoxContainer/Button" to="ChangedIexiconPanel" method="_on_button_pressed"]
+[connection signal="pressed" from="ChangedIexiconPanel/MarginContainer/VBoxContainer/Button2" to="ChangedIexiconPanel" method="_on_button_2_pressed"]
+[connection signal="pressed" from="ChangedIexiconPanel/MarginContainer/VBoxContainer/Button3" to="ChangedIexiconPanel" method="_on_button_3_pressed"]
+[connection signal="pressed" from="ChangedIexiconPanel/MarginContainer/VBoxContainer/Button4" to="ChangedIexiconPanel" method="_on_button_4_pressed"]
+[connection signal="pressed" from="ChangedIexiconPanel/MarginContainer/VBoxContainer/Button5" to="ChangedIexiconPanel" method="_on_button_5_pressed"]
+[connection signal="pressed" from="ChangedIexiconPanel/MarginContainer/VBoxContainer/Button6" to="ChangedIexiconPanel" method="_on_button_6_pressed"]
+[connection signal="pressed" from="ChangedIexiconPanel/MarginContainer/VBoxContainer/Button7" to="ChangedIexiconPanel" method="_on_button_7_pressed"]

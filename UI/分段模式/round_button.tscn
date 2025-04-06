@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://blnbteqmoggbv"]
+
+[ext_resource type="Script" uid="uid://b1o0a550gjubj" path="res://UI/分段模式/round_button.gd" id="1_662fo"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(100, 100)
+theme_override_font_sizes/font_size = 32
+text = "1"
+script = ExtResource("1_662fo")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

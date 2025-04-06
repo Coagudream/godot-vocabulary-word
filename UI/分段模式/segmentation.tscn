@@ -1,0 +1,128 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkw3kihy2w77x"]
+
+[ext_resource type="Script" uid="uid://c8l041f1ectp1" path="res://UI/分段模式/segmentation.gd" id="1_1de1l"]
+[ext_resource type="PackedScene" uid="uid://blnbteqmoggbv" path="res://UI/分段模式/round_button.tscn" id="2_1de1l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_humhc"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goiod"]
+
+[node name="Segmentation" type="PanelContainer"]
+custom_minimum_size = Vector2(1498, 1020)
+anchors_preset = -1
+anchor_right = 0.78
+anchor_bottom = 0.944
+offset_right = 0.399902
+offset_bottom = 0.479919
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_humhc")
+script = ExtResource("1_1de1l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Iexicon" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
+text = "当前选择:cet-4"
+vertical_alignment = 1
+
+[node name="Words" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
+text = "共计xxxx单词"
+vertical_alignment = 1
+
+[node name="Current" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
+text = "当前分段"
+vertical_alignment = 1
+
+[node name="TotalAmount" type="SpinBox" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 1.0
+max_value = 9999.0
+value = 1.0
+alignment = 1
+
+[node name="Total" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
+text = "共计xx段"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Load" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 62.93)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+disabled = true
+text = "保存当前分段"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "说明："
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TotalGrid" type="GridContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+columns = 11
+
+[node name="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/TotalGrid" instance=ExtResource("2_1de1l")]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
