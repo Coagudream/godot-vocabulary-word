@@ -68,4 +68,5 @@ func show_translation() -> void:
 func die() -> void:
 	Events.enemy_died.emit(_enemy_word,_enemy_translate)
 	reparent(get_tree().root) #因为结合当前方案，将子节点移出敌人管理器，使%RoundAmount 及时更新
+	Tts.request_tts_word(word_text.text)
 	show_translation()

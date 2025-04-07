@@ -15,11 +15,16 @@ run/main_scene="uid://c06wwxl10oxbn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+general/text_to_speech=true
+
 [autoload]
 
-ArrayWords="*res://全局/array_words.gd"
 Events="*res://全局/event.gd"
 SceneSystem="*res://通用/场景管理/scene_system.gd"
+ArrayWords="*res://全局/array_words.gd"
+Tts="*res://全局/tts.gd"
 
 [display]
 
