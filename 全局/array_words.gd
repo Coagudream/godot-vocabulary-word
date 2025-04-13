@@ -36,7 +36,7 @@ func request_a_word_dir() -> Dictionary:
 	if not array_words:
 		return {}
 	var index :int = randi_range(0,len(word_index_range)-1)
-	print("索引值%s" %index)
+	#print("索引值%s" %index)
 	var random_amount :int = word_index_range[index]
 	already_words_index.append(random_amount)
 	var new_words : Dictionary = array_words[random_amount]

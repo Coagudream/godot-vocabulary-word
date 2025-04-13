@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ioqthvd1tx7t"]
+[gd_scene load_steps=10 format=3 uid="uid://ioqthvd1tx7t"]
 
 [ext_resource type="Script" uid="uid://edv56ywsp8ja" path="res://主场景/enemy_manager.gd" id="1_plcxv"]
 [ext_resource type="Script" uid="uid://cm8uljy4osqh8" path="res://主场景/round_manager.gd" id="1_vb3l3"]
+[ext_resource type="Script" uid="uid://b84p6nggvj2ci" path="res://主场景/状态/paragraph_state.gd" id="2_kt7y0"]
 [ext_resource type="PackedScene" uid="uid://cgektnb5coyv2" path="res://实体/核心/core.tscn" id="2_mwtco"]
+[ext_resource type="Script" uid="uid://di14i3n78c0s3" path="res://主场景/状态/round_state.gd" id="3_32k2d"]
 [ext_resource type="PackedScene" uid="uid://bbjh0y03ekj1e" path="res://通用/连击系统/combo.tscn" id="4_vkeq7"]
+[ext_resource type="Script" uid="uid://c230pdrfjm1ro" path="res://主场景/状态/endless_state.gd" id="4_wtu0m"]
 [ext_resource type="Script" uid="uid://17imotkeyaq8" path="res://主场景/run_layer.gd" id="5_iegao"]
 [ext_resource type="PackedScene" uid="uid://55cakylwu6o5" path="res://UI/game_stop.tscn" id="6_fc844"]
 
@@ -11,8 +14,17 @@
 
 [node name="ModeStaeManager" type="Node" parent="."]
 script = ExtResource("1_vb3l3")
-current_stae = 1
+current_stae = 2
 metadata/_custom_type_script = "uid://cm8uljy4osqh8"
+
+[node name="ParagraphState" type="Node" parent="ModeStaeManager"]
+script = ExtResource("2_kt7y0")
+
+[node name="RoundState" type="Node" parent="ModeStaeManager"]
+script = ExtResource("3_32k2d")
+
+[node name="EndlessState" type="Node" parent="ModeStaeManager"]
+script = ExtResource("4_wtu0m")
 
 [node name="EnemyManager" type="Node2D" parent="."]
 script = ExtResource("1_plcxv")
@@ -21,7 +33,7 @@ script = ExtResource("1_plcxv")
 position = Vector2(960, 540)
 collision_mask = 2
 
-[node name="TextureProgressBar" parent="Core" instance=ExtResource("4_vkeq7")]
+[node name="Combo" parent="Core" instance=ExtResource("4_vkeq7")]
 offset_left = -100.0
 offset_top = 61.0
 offset_right = 100.0
@@ -29,16 +41,29 @@ offset_bottom = 71.0
 
 [node name="RoundLayer" type="CanvasLayer" parent="."]
 
-[node name="RoundAmount" type="Label" parent="RoundLayer"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="RoundLayer"]
+custom_minimum_size = Vector2(110, 0)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -72.5
-offset_right = 72.5
-offset_bottom = 56.0
+offset_left = -87.0
+offset_right = 87.0
+offset_bottom = 49.0
 grow_horizontal = 2
+alignment = 1
+
+[node name="RoundAmount" type="Label" parent="RoundLayer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_font_sizes/font_size = 35
+text = "当前回合:"
+horizontal_alignment = 1
+
+[node name="EnemyAmount" type="Label" parent="RoundLayer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "5"
 horizontal_alignment = 1
 
 [node name="RunLayer" type="CanvasLayer" parent="."]

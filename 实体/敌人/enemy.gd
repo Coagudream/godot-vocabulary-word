@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 func _move(_delta: float) -> void:
 	velocity = (get_viewport_rect().get_center() - global_position ).normalized()* speed * corrected_value
 
-
+##获取敌人的单词和翻译
 func set_enemy_word_and_translation() -> void:
 	var word_dic = ArrayWords.request_a_word_dir()
 	var word :String = word_dic["word"]
@@ -52,7 +52,17 @@ func set_enemy_word_and_translation() -> void:
 		array_translations.append(enemy_translation)
 	_enemy_translate = array_translations
 
+##切换敌人的（翻译/单词）可见性
+func switch_word_or_translation() -> void:
+	if word_text.visible == true:
+		word_text.visible = false
+		translation.visible = true
+	elif word_text.visible == false:
+		translation.visible = false
+		word_text.visible = true
 
+
+##展示单词翻译
 func show_translation() -> void:
 	translation.show()
 	word_text.show()
@@ -65,6 +75,7 @@ func show_translation() -> void:
 		queue_free
 	)
 
+##死亡逻辑
 func die() -> void:
 	Events.enemy_died.emit(_enemy_word,_enemy_translate)
 	reparent(get_tree().root) #因为结合当前方案，将子节点移出敌人管理器，使%RoundAmount 及时更新
