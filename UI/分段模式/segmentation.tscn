@@ -15,7 +15,7 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goiod"]
 
-[node name="Segmentation" type="PanelContainer"]
+[node name="SegmentationModel" type="PanelContainer"]
 custom_minimum_size = Vector2(1498, 1020)
 anchors_preset = -1
 anchor_right = 0.78

@@ -1,9 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://j2nadwohhina"]
+[gd_scene load_steps=7 format=3 uid="uid://j2nadwohhina"]
 
 [ext_resource type="Script" uid="uid://bpe5jkmpucv0r" path="res://UI/mode_selection.gd" id="1_nvubf"]
 [ext_resource type="PackedScene" uid="uid://dkw3kihy2w77x" path="res://UI/分段模式/segmentation.tscn" id="2_goiod"]
+[ext_resource type="PackedScene" uid="uid://dsd36a2yf1wn" path="res://UI/回合模式/round.tscn" id="3_8gbwv"]
+[ext_resource type="PackedScene" uid="uid://qudmji7rjfu8" path="res://UI/无尽模式/endless.tscn" id="4_7et38"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_58v3y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_humhc"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="ModeSelection" type="Control"]
 layout_mode = 3
@@ -82,8 +94,18 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="Segmentation" parent="HSplitContainer/PanelContainer/MarginContainer" instance=ExtResource("2_goiod")]
+[node name="SegmentationModel" parent="HSplitContainer/PanelContainer/MarginContainer" instance=ExtResource("2_goiod")]
 unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_humhc")
+
+[node name="RoundModel" parent="HSplitContainer/PanelContainer/MarginContainer" instance=ExtResource("3_8gbwv")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="EndlessModel" parent="HSplitContainer/PanelContainer/MarginContainer" instance=ExtResource("4_7et38")]
 visible = false
 layout_mode = 2
 

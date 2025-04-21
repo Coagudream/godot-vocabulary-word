@@ -6,6 +6,22 @@ extends PanelContainer
 @onready var total_amount: SpinBox = %TotalAmount
 @onready var total: Label = %Total
 @onready var total_grid: GridContainer = %TotalGrid
+@onready var segmentation_model: PanelContainer = %SegmentationModel
+
+func _on_paragraph_pressed() -> void:
+	await get_tree().create_timer(0.02).timeout
+	segmentation_model.show()
+	Run.current_model = ModeStaeManager.StateS.Paragraph
+
+
+func _on_round_pressed() -> void:
+	await get_tree().create_timer(0.02).timeout
+	Run.current_model = ModeStaeManager.StateS.Paragraph
+
+
+func _on_endless_pressed() -> void:
+	await get_tree().create_timer(0.02).timeout
+	Run.current_model = ModeStaeManager.StateS.Paragraph
 
 
 func _ready() -> void:
@@ -24,6 +40,7 @@ func _load() -> void:
 	var data = ResourceLoader.load("user://scene_data.tres") as SceneData
 	
 	iexicon.text = data.iexicon
+	ArrayWords.set_current_iexicon(data.current_iexicon)
 	words.text = data.words
 	current.text = data.current
 	total_amount.value = data.total_amount

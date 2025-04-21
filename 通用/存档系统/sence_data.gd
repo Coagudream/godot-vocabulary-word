@@ -8,3 +8,4 @@ extends Resource
 @export var current :String
 @export var total_amount :int
 @export var total :String
+@export var current_iexicon:String

@@ -19,7 +19,7 @@ var current_total_words :int = 30:
 var current_total: int:
 	set(v):
 		current_total = v
-		total.text = "共计%s段" %current_total
+		total.text = "共计%s段" %(current_total+1)
 		_set_round_butten(current_total)
 
 
@@ -100,6 +100,7 @@ func save_button_data() -> void:
 	scene_data.current = current.text
 	scene_data.total_amount = total_amount.value
 	scene_data.total = total.text
+	scene_data.current_iexicon = ArrayWords.get_iexicon()
 	
 	for child_button:TotalButton in total_grid.get_children():
 		var new_save_data := PackedScene.new()
@@ -111,4 +112,3 @@ func save_button_data() -> void:
 		print("保存出错")
 		return
 	print("保存OK!")
-	

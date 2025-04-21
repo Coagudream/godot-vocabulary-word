@@ -8,9 +8,7 @@ func _ready() -> void:
 	var voice_id = voices[0]
 
 func request_tts_word(word:String) -> void:
-	if not voices:
-		return
 	if DisplayServer.tts_is_speaking():
 		DisplayServer.tts_stop()
 	else:
-		DisplayServer.tts_speak(word, voice_id)
+		DisplayServer.tts_speak(word, voice_id, 100)

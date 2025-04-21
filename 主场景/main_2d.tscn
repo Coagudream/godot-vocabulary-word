@@ -14,7 +14,7 @@
 
 [node name="ModeStaeManager" type="Node" parent="."]
 script = ExtResource("1_vb3l3")
-current_stae = 2
+current_stae = 1
 metadata/_custom_type_script = "uid://cm8uljy4osqh8"
 
 [node name="ParagraphState" type="Node" parent="ModeStaeManager"]

@@ -1,0 +1,275 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsd36a2yf1wn"]
+
+[ext_resource type="Script" uid="uid://da2d1brqtndf2" path="res://UI/回合模式/round.gd" id="1_24fip"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_humhc"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyt18"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="RoundModel" type="PanelContainer"]
+custom_minimum_size = Vector2(1498, 1020)
+anchors_preset = -1
+anchor_right = 0.78
+anchor_bottom = 0.944
+offset_right = 0.399902
+offset_bottom = 0.479919
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_humhc")
+script = ExtResource("1_24fip")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "说明："
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Word" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hyt18")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer"]
+custom_minimum_size = Vector2(450, 650)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 34
+text = "单词模式"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 34
+text = "回合内单词数量"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WordSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+min_value = 1.0
+max_value = 999.0
+value = 5.0
+alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="WordCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "是否有中文回合"
+alignment = 2
+
+[node name="Control3" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="WordButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(223.095, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 34
+text = "开始"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Chinese" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hyt18")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer"]
+custom_minimum_size = Vector2(450, 650)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 34
+text = "中文模式"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 34
+text = "回合内单词数量"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChineseSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+min_value = 1.0
+max_value = 999.0
+value = 5.0
+alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 356)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ChineseButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(223.095, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 34
+text = "开始"
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Blender" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hyt18")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer"]
+custom_minimum_size = Vector2(450, 650)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 34
+text = "混合模式"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 34
+text = "回合内单词数量"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BlenderSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+min_value = 1.0
+max_value = 999.0
+value = 5.0
+alignment = 1
+
+[node name="Control4" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 356)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="BlenderButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(223.095, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 34
+text = "开始"
+
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer/WordCheckBox" to="." method="_on_word_check_box_toggled"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer/WordButton" to="." method="_on_word_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer/ChineseButton" to="." method="_on_chinese_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer/BlenderButton" to="." method="_on_blender_button_pressed"]

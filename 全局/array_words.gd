@@ -6,7 +6,7 @@ var current_iexicon :String
 #var thread :Thread = Thread.new()
 var array_words :Array
 var all_index_array: Array[int]
-var already_words_index: Array[int]
+var already_words_index: Array
 var word_index_range: Array[int]
 
 
@@ -36,6 +36,18 @@ func request_a_word_dir() -> Dictionary:
 	if not array_words:
 		return {}
 	var index :int = randi_range(0,len(word_index_range)-1)
+	#print("索引值%s" %index)
+	var random_amount :int = word_index_range[index]
+	already_words_index.append(random_amount)
+	already_words_index = _unique_array(already_words_index)
+	var new_words : Dictionary = array_words[random_amount]
+	return new_words
+
+
+## 暴露 指定返回一个单词字典
+func specify_a_word_dir(index:int) -> Dictionary:
+	if not array_words:
+		return {}
 	#print("索引值%s" %index)
 	var random_amount :int = word_index_range[index]
 	already_words_index.append(random_amount)
@@ -73,20 +85,26 @@ func _set_all_index_array() -> void:
 	all_index_array.clear()
 	for i in range(get_len_words_array()):
 		all_index_array.append(i)
-	
+
+# 数组去重
+func _unique_array(arr: Array) -> Array:
+	var dict:Dictionary = {}
+	for item in arr:
+		dict[item] = true
+	return dict.keys()
 
 
 func _set_json_data(data:Array) -> void:
 	array_words = data
 
 
-#多线程加载
+#(多线程)加载
 func _load_json_async(path: String) -> void:
 	_thread_load_json(path)
 	#thread.start(_thread_load_json.bind(path))
 
 func _thread_load_json(path: String) -> void:
-	# 在子线程中执行加载和解析
+	# 在(子线程)中执行加载和解析
 	if not FileAccess.file_exists(path):
 		call_deferred("_on_json_load_failed", "文件不存在: " + path)
 		return
@@ -105,39 +123,8 @@ func _thread_load_json(path: String) -> void:
 		call_deferred("_on_json_load_failed", json.get_error_message())
 		return
 	
-	# 使用call_deferred在主线程发出信号
+	# 使用call_deferred在(主线程)发出信号
 	call_deferred("emit_signal", "json_loaded", json.get_data())
 
 func _on_json_load_failed(error: String) -> void:
 	print("加载JSON失败: ", error)
-
-
-# 
-## TODO 可以优化多线程加载文件
-#func _load_json_file(path: String) -> Array:
-	## 检查文件是否存在
-	#if not FileAccess.file_exists(path):
-		#print("文件不存在: ", path)
-		#return []
-	#
-	## 打开文件
-	#var file :FileAccess = FileAccess.open(path, FileAccess.READ)
-	#if file == null:
-		#print("打开文件失败: ", FileAccess.get_open_error())
-		#return []
-	#
-	## 读取文件内容
-	#var content :String= file.get_as_text()
-	#file.close()
-	#
-	## 解析JSON
-	#var json :JSON = JSON.new()
-	#var parse_result :Error = json.parse(content)
-	#if parse_result != OK:
-		#print("JSON解析错误: ", json.get_error_message(), " 在行: ", json.get_error_line())
-		#return []
-	#
-	#var json_data = json.get_data() as Array
-	#
-	#Events.json_load_completed.emit()
-	#return json_data 

@@ -15,12 +15,13 @@ var is_first_zero:bool = true #这个变量只要是因为current_round_amount�
 
 func _ready() -> void:
 	Events.updata_enemy_amount.connect(updata_current_amount)
-	await get_tree().create_timer(0.1).timeout
+	current_stae = Run.current_model
 	first_round_start(current_stae)
 
 
 ##游戏第一次开始函数
 func first_round_start(current_stae:StateS) -> void:
+	await get_tree().create_timer(0.1).timeout
 	match current_stae:
 		ModeStaeManager.StateS.None:
 			print("状态为空")

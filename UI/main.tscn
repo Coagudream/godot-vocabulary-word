@@ -93,28 +93,29 @@ theme_override_font_sizes/font_size = 35
 text = "致谢名单"
 
 [node name="ChangedIexicon" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1548.0
-offset_top = 80.0
-offset_right = 1832.0
-offset_bottom = 174.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -372.0
+offset_top = 77.0
+offset_right = -88.0
+offset_bottom = 171.0
+grow_horizontal = 0
 theme_override_font_sizes/font_size = 35
 text = "转换词库
 "
 
 [node name="ChangedIexiconPanel" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
 offset_left = -372.0
-offset_top = -356.0
+offset_top = 181.0
 offset_right = -88.0
-offset_bottom = 123.0
+offset_bottom = 660.0
 grow_horizontal = 0
-grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vnck2")
 script = ExtResource("2_emhnf")
 

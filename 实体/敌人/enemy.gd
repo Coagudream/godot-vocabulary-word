@@ -10,6 +10,8 @@ extends CharacterBody2D
 @export var corrected_value:float
 @export var speed :float
 
+var current_word_dictionary:Dictionary
+
 var _enemy_word :String:
 	set(v):
 		_enemy_word = v
@@ -39,13 +41,25 @@ func _physics_process(delta: float) -> void:
 func _move(_delta: float) -> void:
 	velocity = (get_viewport_rect().get_center() - global_position ).normalized()* speed * corrected_value
 
-##获取敌人的单词和翻译
+## 获取敌人的单词和翻译
 func set_enemy_word_and_translation() -> void:
-	var word_dic = ArrayWords.request_a_word_dir()
-	var word :String = word_dic["word"]
+	current_word_dictionary = ArrayWords.request_a_word_dir()
+	var word :String = current_word_dictionary["word"]
 	_enemy_word = word
 	
-	var translations : Array = word_dic["translations"]
+	var translations : Array = current_word_dictionary["translations"]
+	var array_translations :Array[String]
+	for _translation in translations:
+		var enemy_translation:String = _translation["translation"] +","+ _translation["type"]
+		array_translations.append(enemy_translation)
+	_enemy_translate = array_translations
+
+## 指定敌人的单词与翻译
+func specify_enemy_word_and_translation(word_dictionary:Dictionary) -> void:
+	var word :String = word_dictionary["word"]
+	_enemy_word = word
+	
+	var translations : Array = word_dictionary["translations"]
 	var array_translations :Array[String]
 	for _translation in translations:
 		var enemy_translation:String = _translation["translation"] +","+ _translation["type"]
