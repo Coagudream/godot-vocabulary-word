@@ -67,19 +67,21 @@ func reset_all_index_array() -> void:
 	all_index_array.shuffle()
 	is_first = true
 
+
+# 分配数组给单词
 func _reset_total_button_index_array(current_total_words:int) -> void:
 	for child:TotalButton in total_grid.get_children():
 		child.array_index.clear()
 		child.array_index = set_a_total_in_words(current_total_words)
 
-
+# 分割单词数组索引
 func set_a_total_in_words(amount:int) -> Array[int]:
+	#先删再拿，先拿再删。（函数return之后就跳出了）
 	if is_first:
 		is_first = false
 		return all_index_array.slice(0,amount)
-		
+	
 	if all_index_array.size() <= amount:
-		
 		return all_index_array
 	
 	for i in range(amount):

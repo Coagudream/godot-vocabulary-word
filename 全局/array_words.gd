@@ -27,7 +27,6 @@ func _ready() -> void:
 	_load_json_async(Iexicon[current_iexicon])
 	word_index_range = all_index_array
 
-#
 #func _exit_tree() -> void:
 	#thread.wait_to_finish()
 
@@ -71,7 +70,7 @@ func get_len_words_array() -> int:
 func get_iexicon() -> String:
 	return current_iexicon
 
-## 暴露 设置索范围
+## 暴露 设置索引范围
 func _set_word_index_range(array_range:Array[int]) -> void:
 	word_index_range = array_range
 

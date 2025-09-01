@@ -28,11 +28,10 @@ var _enemy_translate :Array[String]:
 		for translatione:String in _enemy_translate:
 			translation.text += translatione
 			translation.text += "\n"
-	
-
 
 func _ready() -> void:
 	corrected_value = randf_range(0.5,2.0)
+	
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()

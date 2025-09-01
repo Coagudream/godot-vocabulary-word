@@ -73,24 +73,6 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_rrlhe")
 text = "分段模式"
 
-[node name="Round" type="Button" parent="MarginContainer2/VSplitContainer/PanelContainer/HBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 55
-toggle_mode = true
-button_group = SubResource("ButtonGroup_rrlhe")
-text = "回合模式"
-
-[node name="Endless" type="Button" parent="MarginContainer2/VSplitContainer/PanelContainer/HBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 55
-toggle_mode = true
-button_group = SubResource("ButtonGroup_rrlhe")
-text = "无尽模式"
-
 [node name="Control" type="Control" parent="MarginContainer2/VSplitContainer"]
 layout_mode = 2
 
@@ -183,5 +165,3 @@ layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer2/VSplitContainer/PanelContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer2/VSplitContainer/PanelContainer/HBoxContainer/Paragraph" to="." method="_on_paragraph_pressed"]
-[connection signal="pressed" from="MarginContainer2/VSplitContainer/PanelContainer/HBoxContainer/Round" to="." method="_on_round_pressed"]
-[connection signal="pressed" from="MarginContainer2/VSplitContainer/PanelContainer/HBoxContainer/Endless" to="." method="_on_endless_pressed"]

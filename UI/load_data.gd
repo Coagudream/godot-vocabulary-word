@@ -14,16 +14,6 @@ func _on_paragraph_pressed() -> void:
 	Run.current_model = ModeStaeManager.StateS.Paragraph
 
 
-func _on_round_pressed() -> void:
-	await get_tree().create_timer(0.02).timeout
-	Run.current_model = ModeStaeManager.StateS.Paragraph
-
-
-func _on_endless_pressed() -> void:
-	await get_tree().create_timer(0.02).timeout
-	Run.current_model = ModeStaeManager.StateS.Paragraph
-
-
 func _ready() -> void:
 	for child in total_grid.get_children():
 		if not child:

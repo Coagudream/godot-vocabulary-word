@@ -151,7 +151,6 @@ custom_minimum_size = Vector2(0, 57.625)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 toggle_mode = true
-button_pressed = true
 button_group = SubResource("ButtonGroup_vnck2")
 text = "CET-4"
 
