@@ -104,7 +104,3 @@ func _input(event: InputEvent) -> void:
 			enemy.die()
 		#for i in range(5):
 			#add_random_enemy()
-
-func _on_button_pressed() -> void:
-	Events.request_next_round_start.emit()
-	#change_enemy_position()

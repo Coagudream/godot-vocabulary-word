@@ -6,6 +6,8 @@ extends StaticBody2D
 
 func _ready() -> void:
 	Events.request_cream_shakered.connect(request_cream_shaker)
+	await get_tree().create_timer(0.5).timeout
+	Events.care_global_position.emit(self.global_position)
 
 func _on_word_text_submitted(new_text: String) -> void:
 	if not new_text:

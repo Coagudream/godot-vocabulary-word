@@ -17,3 +17,6 @@ signal enemy_died(ward:String,translation:Array[String])
 
 #摄像机震动
 signal request_cream_shakered(amplitude:int)
+
+#核心
+signal care_global_position(care_position:Vector2)

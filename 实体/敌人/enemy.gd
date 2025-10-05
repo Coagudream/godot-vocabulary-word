@@ -6,11 +6,12 @@ extends CharacterBody2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Group/Sprite2D
 
-
 @export var corrected_value:float
 @export var speed :float
 
 var current_word_dictionary:Dictionary
+
+static var care_global_position:Vector2
 
 var _enemy_word :String:
 	set(v):
@@ -31,14 +32,18 @@ var _enemy_translate :Array[String]:
 
 func _ready() -> void:
 	corrected_value = randf_range(0.5,2.0)
-	
+	Events.care_global_position.connect(_set_care_global_position)
+
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 	_move(delta)
 
+func _set_care_global_position(care_position:Vector2) -> void:
+	care_global_position = care_position
+
 func _move(_delta: float) -> void:
-	velocity = (get_viewport_rect().get_center() - global_position ).normalized()* speed * corrected_value
+	velocity = (care_global_position - global_position ).normalized()* speed * corrected_value
 
 ## 获取敌人的单词和翻译
 func set_enemy_word_and_translation() -> void:

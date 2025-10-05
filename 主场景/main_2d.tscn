@@ -87,4 +87,4 @@ focus_mode = 0
 [node name="GameStop" parent="RunLayer" instance=ExtResource("6_fc844")]
 mouse_filter = 2
 
-[connection signal="pressed" from="RunLayer/Button" to="EnemyManager" method="_on_button_pressed"]
+[connection signal="pressed" from="RunLayer/Button" to="RunLayer" method="_on_button_pressed"]
