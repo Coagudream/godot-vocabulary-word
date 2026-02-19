@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="背单词"
+config/tags=PackedStringArray("项目")
 run/main_scene="uid://c06wwxl10oxbn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
-config/tags=PackedStringArray("项目")
 
 [audio]
 
