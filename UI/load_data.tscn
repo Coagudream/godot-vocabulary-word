@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8kncrmltttws"]
+[gd_scene format=3 uid="uid://b8kncrmltttws"]
 
 [ext_resource type="Script" uid="uid://d1ov0b8auqrk7" path="res://UI/load_data.gd" id="1_rrlhe"]
 [ext_resource type="PackedScene" uid="uid://blnbteqmoggbv" path="res://UI/分段模式/round_button.tscn" id="2_rrlhe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvubf"]
+bg_color = Color(0.8554499, 0.9872337, 0.85081255, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -27,7 +28,7 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goiod"]
 
-[node name="PanelContainer" type="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" unique_id=421543835]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,22 +36,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rrlhe")
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=318324329]
 layout_mode = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer2"]
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer2" unique_id=129847683]
 layout_mode = 2
+split_offsets = PackedInt32Array(100)
+split_offset = 100
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2/VSplitContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2/VSplitContainer" unique_id=854575437]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nvubf")
 
-[node name="Back" type="Button" parent="MarginContainer2/VSplitContainer/PanelContainer"]
+[node name="Back" type="Button" parent="MarginContainer2/VSplitContainer/PanelContainer" unique_id=1696190240]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -58,13 +61,13 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 29
 text = "返回"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VSplitContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VSplitContainer/PanelContainer" unique_id=260070978]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 25
 alignment = 1
 
-[node name="Paragraph" type="Button" parent="MarginContainer2/VSplitContainer/PanelContainer/HBoxContainer"]
+[node name="Paragraph" type="Button" parent="MarginContainer2/VSplitContainer/PanelContainer/HBoxContainer" unique_id=981191621]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -73,30 +76,30 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_rrlhe")
 text = "分段模式"
 
-[node name="Control" type="Control" parent="MarginContainer2/VSplitContainer"]
+[node name="Control" type="Control" parent="MarginContainer2/VSplitContainer" unique_id=1694913614]
 layout_mode = 2
 
-[node name="SegmentationModel" type="PanelContainer" parent="MarginContainer2/VSplitContainer/Control"]
+[node name="SegmentationModel" type="PanelContainer" parent="MarginContainer2/VSplitContainer/Control" unique_id=1540070005]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(1498, 0)
-layout_mode = 2
+layout_mode = 0
 offset_right = 1860.0
 offset_bottom = 908.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_humhc")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel" unique_id=1387313359]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer" unique_id=2083951347]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer" unique_id=927976633]
 layout_mode = 2
 alignment = 1
 
-[node name="Iexicon" type="Label" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Iexicon" type="Label" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1523394822]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -104,7 +107,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
 text = "当前选择:cet-4"
 vertical_alignment = 1
 
-[node name="Words" type="Label" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Words" type="Label" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1456529478]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -112,7 +115,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
 text = "共计xxxx单词"
 vertical_alignment = 1
 
-[node name="Current" type="Label" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Current" type="Label" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer/VBoxContainer" unique_id=300021554]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -120,7 +123,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
 text = "当前分段"
 vertical_alignment = 1
 
-[node name="TotalAmount" type="SpinBox" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="TotalAmount" type="SpinBox" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1206488254]
 unique_name_in_owner = true
 layout_mode = 2
 min_value = 1.0
@@ -129,7 +132,7 @@ value = 1.0
 alignment = 1
 editable = false
 
-[node name="Total" type="Label" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Total" type="Label" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/PanelContainer/VBoxContainer" unique_id=854607536]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -137,21 +140,21 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
 text = "共计xx段"
 vertical_alignment = 1
 
-[node name="VSeparator" type="VSeparator" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer" unique_id=126632504]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer" unique_id=52922042]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/VBoxContainer" unique_id=1388852547]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/VBoxContainer" unique_id=303603035]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TotalGrid" type="GridContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/VBoxContainer/ScrollContainer"]
+[node name="TotalGrid" type="GridContainer" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=167505957]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -160,7 +163,7 @@ theme_override_constants/h_separation = 18
 theme_override_constants/v_separation = 14
 columns = 14
 
-[node name="Button" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/VBoxContainer/ScrollContainer/TotalGrid" instance=ExtResource("2_rrlhe")]
+[node name="Button" parent="MarginContainer2/VSplitContainer/Control/SegmentationModel/HBoxContainer/VBoxContainer/ScrollContainer/TotalGrid" unique_id=1694782698 instance=ExtResource("2_rrlhe")]
 layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer2/VSplitContainer/PanelContainer/Back" to="." method="_on_back_pressed"]

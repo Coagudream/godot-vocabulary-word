@@ -1,7 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c06wwxl10oxbn"]
+[gd_scene format=3 uid="uid://c06wwxl10oxbn"]
 
 [ext_resource type="Script" uid="uid://duw6ho4wvyta8" path="res://UI/main.gd" id="1_vnck2"]
 [ext_resource type="Script" uid="uid://bkpfgo4i4nqos" path="res://UI/changed_iexicon_panel.gd" id="2_emhnf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emhnf"]
+bg_color = Color(1, 0.972549, 0.90588236, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnck2"]
 bg_color = Color(0, 0, 0, 1)
@@ -16,7 +28,7 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_vnck2"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=280292562]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vnck2")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1072258583]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,7 +45,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=502707624]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -46,37 +58,60 @@ grow_vertical = 2
 theme_override_constants/separation = 35
 alignment = 1
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=271610141]
 custom_minimum_size = Vector2(50, 120)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "开始背单词"
 
-[node name="Continue" type="Button" parent="VBoxContainer"]
+[node name="Continue" type="Button" parent="VBoxContainer" unique_id=1993836512]
 custom_minimum_size = Vector2(50, 120)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "继续背单词"
 
-[node name="Statistics" type="Button" parent="VBoxContainer"]
+[node name="Statistics" type="Button" parent="VBoxContainer" unique_id=696160922]
 custom_minimum_size = Vector2(50, 120)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "统计"
 
-[node name="Set" type="Button" parent="VBoxContainer"]
+[node name="Set" type="Button" parent="VBoxContainer" unique_id=94736292]
 custom_minimum_size = Vector2(50, 120)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "设置"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=997090823]
 custom_minimum_size = Vector2(50, 120)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "退出"
 
-[node name="Thank" type="Button" parent="."]
+[node name="Thanks" type="PanelContainer" parent="." unique_id=1103545943]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -796.0
+offset_top = -276.0
+offset_right = -314.08997
+offset_bottom = -72.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_emhnf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Thanks" unique_id=114539584]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "单词库来源：
+https://github.com/KyleBing/english-vocabulary"
+
+[node name="Thank" type="Button" parent="." unique_id=1362021557]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -90,9 +125,10 @@ offset_bottom = -72.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 35
+toggle_mode = true
 text = "致谢名单"
 
-[node name="ChangedIexicon" type="Button" parent="."]
+[node name="ChangedIexicon" type="Button" parent="." unique_id=728527893]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -106,7 +142,8 @@ theme_override_font_sizes/font_size = 35
 text = "转换词库
 "
 
-[node name="ChangedIexiconPanel" type="PanelContainer" parent="."]
+[node name="ChangedIexiconPanel" type="PanelContainer" parent="." unique_id=1174095015]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -119,18 +156,18 @@ grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_vnck2")
 script = ExtResource("2_emhnf")
 
-[node name="MarginContainer" type="MarginContainer" parent="ChangedIexiconPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="ChangedIexiconPanel" unique_id=2044712067]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ChangedIexiconPanel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ChangedIexiconPanel/MarginContainer" unique_id=1655426442]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Button" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer" unique_id=1224980377]
 custom_minimum_size = Vector2(0, 57.625)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
@@ -138,7 +175,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_vnck2")
 text = "初中"
 
-[node name="Button2" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer" unique_id=1716035775]
 custom_minimum_size = Vector2(0, 57.625)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
@@ -146,7 +183,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_vnck2")
 text = "高中"
 
-[node name="Button3" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+[node name="Button3" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer" unique_id=1332050212]
 custom_minimum_size = Vector2(0, 57.625)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
@@ -154,7 +191,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_vnck2")
 text = "CET-4"
 
-[node name="Button4" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+[node name="Button4" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer" unique_id=691316671]
 custom_minimum_size = Vector2(0, 57.625)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
@@ -162,7 +199,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_vnck2")
 text = "CET-6"
 
-[node name="Button5" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+[node name="Button5" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer" unique_id=548805257]
 custom_minimum_size = Vector2(0, 57.625)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
@@ -170,7 +207,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_vnck2")
 text = "考研"
 
-[node name="Button6" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+[node name="Button6" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer" unique_id=47019438]
 custom_minimum_size = Vector2(0, 57.625)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
@@ -178,7 +215,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_vnck2")
 text = "托福"
 
-[node name="Button7" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer"]
+[node name="Button7" type="Button" parent="ChangedIexiconPanel/MarginContainer/VBoxContainer" unique_id=1775117128]
 custom_minimum_size = Vector2(0, 57.625)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
@@ -186,11 +223,34 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_vnck2")
 text = "SAT"
 
+[node name="Title" type="Label" parent="." unique_id=2093562004]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.61300004
+anchor_top = 0.45900002
+anchor_right = 0.61300004
+anchor_bottom = 0.45900002
+offset_left = -386.95996
+offset_top = -170.72003
+offset_right = 387.04004
+offset_bottom = 171.27997
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.31939524
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25490198)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 12
+theme_override_font_sizes/font_size = 250
+text = "Words"
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/Statistics" to="." method="_on_statistics_pressed"]
 [connection signal="pressed" from="VBoxContainer/Set" to="." method="_on_set_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="toggled" from="Thank" to="." method="_on_thank_toggled"]
 [connection signal="pressed" from="ChangedIexicon" to="." method="_on_changed_iexicon_pressed"]
 [connection signal="pressed" from="ChangedIexiconPanel/MarginContainer/VBoxContainer/Button" to="ChangedIexiconPanel" method="_on_button_pressed"]
 [connection signal="pressed" from="ChangedIexiconPanel/MarginContainer/VBoxContainer/Button2" to="ChangedIexiconPanel" method="_on_button_2_pressed"]

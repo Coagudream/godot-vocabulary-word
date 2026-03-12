@@ -43,14 +43,12 @@ func _on_button_pressed() -> void:
 	ArrayWords.set_current_iexicon("初中")
 	is_clicked = "初中"
 	_await_time()
-	hide()
 
 
 func _on_button_2_pressed() -> void:
 	ArrayWords.set_current_iexicon("高中")
 	is_clicked = "高中"
 	_await_time()
-	hide()
 	
 
 
@@ -58,35 +56,31 @@ func _on_button_3_pressed() -> void:
 	ArrayWords.set_current_iexicon("CET-4")
 	is_clicked = "CET-4"
 	_await_time()
-	hide()
 
 
 func _on_button_4_pressed() -> void:
 	ArrayWords.set_current_iexicon("CET-6")
 	is_clicked = "CET-6"
 	_await_time()
-	hide()
 
 
 func _on_button_5_pressed() -> void:
 	ArrayWords.set_current_iexicon("考研")
 	is_clicked = "考研"
 	_await_time()
-	hide()
 
 
 func _on_button_6_pressed() -> void:
 	ArrayWords.set_current_iexicon("托福")
 	is_clicked = "托福"
 	_await_time()
-	hide()
 
 
 func _on_button_7_pressed() -> void:
 	ArrayWords.set_current_iexicon("SAT")
 	is_clicked = "SAT"
 	_await_time()
-	hide()
+
 
 func _await_time() -> void:
-	await get_tree().create_timer(0.15).timeout
+	await get_tree().create_timer(0.01).timeout

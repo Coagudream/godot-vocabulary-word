@@ -62,7 +62,7 @@ func set_current_iexicon(iexicon:String) -> void:
 	_load_json_async(Iexicon[current_iexicon])
 	word_index_range = all_index_array
 
-## 暴露 获取当前所以单词数量
+## 暴露 获取当前所有单词数量
 func get_len_words_array() -> int:
 	return len(array_words)
 

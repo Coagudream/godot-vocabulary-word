@@ -1,29 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqjbwxa82p1ft"]
+[gd_scene format=3 uid="uid://cqjbwxa82p1ft"]
 
 [ext_resource type="Script" uid="uid://bi5nukaalymvc" path="res://实体/敌人/enemy.gd" id="1_p2588"]
-[ext_resource type="Texture2D" uid="uid://x8tvjbuk68ge" path="res://实体/敌人/艺术/精灵图-0001.png" id="2_6bxoh"]
+[ext_resource type="Texture2D" uid="uid://v8vebymmdvid" path="res://实体/敌人/艺术/敌人1.png" id="2_6bxoh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2588"]
 radius = 32.0
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" unique_id=1068539531]
 collision_layer = 2
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_p2588")
 speed = 25.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=593756441]
 shape = SubResource("CircleShape2D_p2588")
 
-[node name="Group" type="Node2D" parent="."]
+[node name="Group" type="Node2D" parent="." unique_id=283859508]
 
-[node name="Sprite2D" type="Sprite2D" parent="Group"]
-position = Vector2(0.499998, 0.0119067)
-scale = Vector2(0.451, 0.447)
+[node name="Sprite2D" type="Sprite2D" parent="Group" unique_id=986895013]
+scale = Vector2(0.78, 0.78)
 texture = ExtResource("2_6bxoh")
 
-[node name="translation" type="Label" parent="Group"]
+[node name="translation" type="Label" parent="Group" unique_id=383753449]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 8
@@ -41,7 +40,7 @@ theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="word" type="Label" parent="Group"]
+[node name="word" type="Label" parent="Group" unique_id=2044156830]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5

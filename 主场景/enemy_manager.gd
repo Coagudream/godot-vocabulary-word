@@ -34,7 +34,7 @@ func add_random_enemy() -> void:
 	new_enemy.global_position = random_position()
 	add_child(new_enemy)
 	current_enemies_word_dictionary.append(new_enemy.current_word_dictionary)
-	
+
 
 ## 添加一个敌人(指定单词翻译)
 func add_specify_enemy(word_dictionary:Dictionary) ->void:
@@ -102,5 +102,5 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("add_enemy"):
 		for enemy:Enemy in get_children():
 			enemy.die()
-		#for i in range(5):
-			#add_random_enemy()
+		for i in range(5):
+			add_random_enemy()

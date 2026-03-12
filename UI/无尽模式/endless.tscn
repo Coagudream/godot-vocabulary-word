@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://qudmji7rjfu8"]
+[gd_scene format=3 uid="uid://qudmji7rjfu8"]
 
 [ext_resource type="Script" uid="uid://cn12smycnjb4a" path="res://UI/无尽模式/endless.gd" id="1_1rv6l"]
+[ext_resource type="LabelSettings" uid="uid://dapa4weuvncfv" path="res://UI/typeface.tres" id="2_clcd1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_humhc"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -13,6 +15,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyt18"]
+bg_color = Color(0.9098039, 1, 0.84313726, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -22,7 +25,39 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="EndlessModel" type="PanelContainer"]
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_clcd1"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+color = Color(0.7261877, 0.96113306, 0.7195967, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_si0a0"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+color = Color(0.7261877, 0.96113306, 0.7195967, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0gqhl"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+color = Color(0.7261877, 0.96113306, 0.7195967, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clcd1"]
+bg_color = Color(0.9254867, 0.90580374, 0.8016195, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="EndlessModel" type="PanelContainer" unique_id=1661069415]
 custom_minimum_size = Vector2(1498, 1020)
 anchors_preset = -1
 anchor_right = 0.78
@@ -34,81 +69,81 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_humhc")
 script = ExtResource("1_1rv6l")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1743391230]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1302995916]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer" unique_id=1434361847]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer" unique_id=1921334285]
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
-text = "说明："
+text = "说明：
+1.永无止境的出现单词"
 
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer" unique_id=401134658]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2" unique_id=1742474106]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Word" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+[node name="Word" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1081194351]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word" unique_id=1941626457]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_hyt18")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer" unique_id=1283262801]
 custom_minimum_size = Vector2(450, 650)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=1407870480]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 34
 text = "设置"
+label_settings = ExtResource("2_clcd1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=739341351]
+custom_minimum_size = Vector2(0, 88.895)
 layout_mode = 2
 
-[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
+[node name="HSeparator4" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=1101866842]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_clcd1")
+
+[node name="PanelContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=5922235]
+custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
 
-[node name="HSeparator4" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="PanelContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer/PanelContainer"]
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer/PanelContainer" unique_id=199895868]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 34
 text = "场景内最大单词数"
+label_settings = ExtResource("2_clcd1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WordSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer/PanelContainer"]
+[node name="WordSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer/PanelContainer" unique_id=1327236446]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -118,21 +153,25 @@ max_value = 999.0
 value = 4.0
 alignment = 1
 
-[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=1383762747]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_si0a0")
 
-[node name="PanelContainer2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="PanelContainer2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=1477086959]
+custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
+alignment = 1
 
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer/PanelContainer2"]
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer/PanelContainer2" unique_id=1622621850]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 34
 text = "下一个敌人出现时间"
+label_settings = ExtResource("2_clcd1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WordTime" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer/PanelContainer2"]
+[node name="WordTime" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer/PanelContainer2" unique_id=1527371562]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -143,28 +182,28 @@ step = 0.1
 value = 2.0
 alignment = 1
 
-[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=1887674468]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_0gqhl")
 
-[node name="WordCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="WordCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=456502896]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 34
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_clcd1")
 text = "是否有随机中文"
-alignment = 2
+alignment = 1
 
-[node name="HSeparator5" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=884467401]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-
-[node name="WordButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="WordButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=1556741764]
 custom_minimum_size = Vector2(223.095, 60)
 layout_mode = 2
 size_flags_horizontal = 4

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsd36a2yf1wn"]
+[gd_scene format=3 uid="uid://dsd36a2yf1wn"]
 
 [ext_resource type="Script" uid="uid://da2d1brqtndf2" path="res://UI/回合模式/round.gd" id="1_24fip"]
+[ext_resource type="LabelSettings" uid="uid://dapa4weuvncfv" path="res://UI/typeface.tres" id="2_mt0j4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_humhc"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -13,6 +15,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyt18"]
+bg_color = Color(0.9115111, 1, 0.84244674, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -22,7 +25,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="RoundModel" type="PanelContainer"]
+[node name="RoundModel" type="PanelContainer" unique_id=109099763]
 custom_minimum_size = Vector2(1498, 1020)
 anchors_preset = -1
 anchor_right = 0.78
@@ -34,73 +37,76 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_humhc")
 script = ExtResource("1_24fip")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1179207019]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1693023924]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer" unique_id=1407787749]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer" unique_id=1196936867]
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
-text = "说明："
+text = "说明：
+1.单词模式：当前回合单词数量完成后将出现新的单词,中文回合：将出现上一个回合英文单词的中文
+2.中文模式：只有中文，适合英语极强的人
+3.混合模式：一回合内同时出现中文和英文"
 
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer" unique_id=946148806]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2" unique_id=130152305]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Word" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+[node name="Word" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=900591157]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word" unique_id=1881121683]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_hyt18")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer" unique_id=386524389]
 custom_minimum_size = Vector2(450, 650)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=2062843583]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 34
 text = "单词模式"
+label_settings = ExtResource("2_mt0j4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=1060474106]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=1532811263]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 34
 text = "回合内单词数量"
+label_settings = ExtResource("2_mt0j4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WordSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="WordSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=1859265433]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -110,28 +116,28 @@ max_value = 999.0
 value = 5.0
 alignment = 1
 
-[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=1768336180]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="WordCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="WordCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=278723895]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
 text = "是否有中文回合"
 alignment = 2
 
-[node name="Control3" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="Control3" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=294190581]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="WordButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer"]
+[node name="WordButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Word/PanelContainer/VBoxContainer" unique_id=831862235]
 custom_minimum_size = Vector2(223.095, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -139,49 +145,51 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 34
 text = "开始"
 
-[node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=309403759]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Chinese" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+[node name="Chinese" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1729331190]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese" unique_id=182493892]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_hyt18")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer" unique_id=444418767]
 custom_minimum_size = Vector2(450, 650)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer" unique_id=1882006522]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 34
 text = "中文模式"
+label_settings = ExtResource("2_mt0j4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer" unique_id=1421389227]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer" unique_id=61032860]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 34
 text = "回合内单词数量"
+label_settings = ExtResource("2_mt0j4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ChineseSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+[node name="ChineseSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer" unique_id=981818991]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -191,12 +199,12 @@ max_value = 999.0
 value = 5.0
 alignment = 1
 
-[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer" unique_id=886155803]
 custom_minimum_size = Vector2(0, 356)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="ChineseButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer"]
+[node name="ChineseButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Chinese/PanelContainer/VBoxContainer" unique_id=437081650]
 custom_minimum_size = Vector2(223.095, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -204,49 +212,51 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 34
 text = "开始"
 
-[node name="VSeparator2" type="VSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=2076601002]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Blender" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+[node name="Blender" type="MarginContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1105047892]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender" unique_id=83663385]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_hyt18")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer" unique_id=1764888128]
 custom_minimum_size = Vector2(450, 650)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer" unique_id=1000098023]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 34
 text = "混合模式"
+label_settings = ExtResource("2_mt0j4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer" unique_id=1067666345]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer" unique_id=1597931630]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 34
 text = "回合内单词数量"
+label_settings = ExtResource("2_mt0j4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BlenderSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+[node name="BlenderSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer" unique_id=614311892]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -256,12 +266,12 @@ max_value = 999.0
 value = 5.0
 alignment = 1
 
-[node name="Control4" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+[node name="Control4" type="Control" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer" unique_id=2049544478]
 custom_minimum_size = Vector2(0, 356)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="BlenderButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer"]
+[node name="BlenderButton" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/Blender/PanelContainer/VBoxContainer" unique_id=1685905525]
 custom_minimum_size = Vector2(223.095, 60)
 layout_mode = 2
 size_flags_horizontal = 4

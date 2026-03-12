@@ -1,21 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkw3kihy2w77x"]
+[gd_scene format=3 uid="uid://dkw3kihy2w77x"]
 
 [ext_resource type="Script" uid="uid://c8l041f1ectp1" path="res://UI/分段模式/segmentation.gd" id="1_1de1l"]
 [ext_resource type="PackedScene" uid="uid://blnbteqmoggbv" path="res://UI/分段模式/round_button.tscn" id="2_1de1l"]
+[ext_resource type="LabelSettings" uid="uid://dapa4weuvncfv" path="res://UI/typeface.tres" id="2_ocdoi"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_humhc"]
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocdoi"]
+bg_color = Color(0.99215686, 0.8509804, 0.52156866, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goiod"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jiwer"]
 
-[node name="SegmentationModel" type="PanelContainer"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2188y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62cdn"]
+
+[node name="SegmentationModel" type="PanelContainer" unique_id=1636006472]
 custom_minimum_size = Vector2(1498, 1020)
 anchors_preset = -1
 anchor_right = 0.78
@@ -24,96 +26,119 @@ offset_right = 0.399902
 offset_bottom = 0.479919
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_humhc")
 script = ExtResource("1_1de1l")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=459982433]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=787054535]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer" unique_id=1817771813]
 layout_mode = 2
 alignment = 1
 
-[node name="Iexicon" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Iexicon" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=907264535]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
 text = "当前选择:cet-4"
+label_settings = ExtResource("2_ocdoi")
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Words" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Words" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=700204397]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
 text = "共计xxxx单词"
+label_settings = ExtResource("2_ocdoi")
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Current" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Current" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1917442372]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
 text = "当前分段"
+label_settings = ExtResource("2_ocdoi")
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TotalAmount" type="SpinBox" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=968636960]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ocdoi")
+
+[node name="TotalAmount" type="SpinBox" parent="HBoxContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=1394194536]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/up_background_hovered = SubResource("StyleBoxEmpty_jiwer")
+theme_override_styles/up_background_pressed = SubResource("StyleBoxEmpty_2188y")
+theme_override_styles/down_background_hovered = SubResource("StyleBoxEmpty_62cdn")
+theme_override_styles/down_background_pressed = SubResource("StyleBoxEmpty_62cdn")
 min_value = 1.0
 max_value = 9999.0
 value = 1.0
 alignment = 1
 
-[node name="Total" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Total2" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1576075027]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_goiod")
-text = "共计xx段"
+text = "个单词"
+label_settings = ExtResource("2_ocdoi")
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Total" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=859475261]
+unique_name_in_owner = true
+layout_mode = 2
+text = "共计xx段"
+label_settings = ExtResource("2_ocdoi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=69671725]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="Load" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Load" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1151185200]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 62.93)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 disabled = true
 text = "保存当前分段"
 
-[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1023391034]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1803521363]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer" unique_id=1096382777]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer" unique_id=1226588642]
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
-text = "说明："
+bbcode_enabled = true
+text = "说明：
+1.根据你选择的词库设定一个段落中的单词个数
+2.每个段落中将在词库中随机抽取所设定的单词个数
+3.点击右下角可以保存当前分段，并在<继续游戏>继续你的分段
+注：保存当前分段会覆盖上次的保存分段
+[color=red]（重要）[/color]按下Alt键生成新单词"
 
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer" unique_id=989168951]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer" unique_id=1036872050]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TotalGrid" type="GridContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer"]
+[node name="TotalGrid" type="GridContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer" unique_id=1561026761]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -122,7 +147,7 @@ theme_override_constants/h_separation = 14
 theme_override_constants/v_separation = 14
 columns = 11
 
-[node name="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/TotalGrid" instance=ExtResource("2_1de1l")]
+[node name="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/TotalGrid" unique_id=247472763 instance=ExtResource("2_1de1l")]
 layout_mode = 2
 
 [connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
