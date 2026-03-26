@@ -54,7 +54,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 text = "说明：
 1.单词模式：当前回合单词数量完成后将出现新的单词,中文回合：将出现上一个回合英文单词的中文
-2.中文模式：只有中文，适合英语极强的人
+2.中文模式：只出现中文，适合英语极强的人
 3.混合模式：一回合内同时出现中文和英文"
 
 [node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer" unique_id=946148806]

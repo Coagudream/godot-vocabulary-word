@@ -83,4 +83,5 @@ func _on_button_7_pressed() -> void:
 
 
 func _await_time() -> void:
-	await get_tree().create_timer(0.01).timeout
+	#await get_tree().create_timer(0.01).timeout
+	pass
