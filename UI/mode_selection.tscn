@@ -2,8 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bpe5jkmpucv0r" path="res://UI/mode_selection.gd" id="1_nvubf"]
 [ext_resource type="PackedScene" uid="uid://dkw3kihy2w77x" path="res://UI/分段模式/segmentation.tscn" id="2_goiod"]
+[ext_resource type="Shader" uid="uid://beoxw54ck0r1f" path="res://着色/back_ground.gdshader" id="2_hcilx"]
 [ext_resource type="PackedScene" uid="uid://dsd36a2yf1wn" path="res://UI/回合模式/round.tscn" id="3_8gbwv"]
 [ext_resource type="PackedScene" uid="uid://qudmji7rjfu8" path="res://UI/无尽模式/endless.tscn" id="4_7et38"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2j1o"]
+shader = ExtResource("2_hcilx")
+shader_parameter/color_one = Color(1, 0.972549, 0.90588236, 1)
+shader_parameter/color_two = Color(0.5834499, 0.5834499, 0.5834499, 1)
+shader_parameter/angle = 66.53
+shader_parameter/line_count = 175.0
+shader_parameter/speed = 5.0
+shader_parameter/blur = 0.0
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_58v3y"]
 
@@ -16,6 +26,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_nvubf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1578576669]
+material = SubResource("ShaderMaterial_g2j1o")
+layout_mode = 0
+offset_left = -668.0
+offset_top = -206.0
+offset_right = 2683.0
+offset_bottom = 1343.0
+color = Color(1, 0.972549, 0.90588236, 1)
 
 [node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=123521271]
 layout_mode = 0
@@ -97,6 +116,9 @@ layout_mode = 2
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1304154983]
+position = Vector2(960, 540)
 
 [connection signal="pressed" from="HSplitContainer/ModeSelection/MarginContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HSplitContainer/ModeSelection/MarginContainer/VBoxContainer/Paragraph" to="." method="_on_paragraph_pressed"]
