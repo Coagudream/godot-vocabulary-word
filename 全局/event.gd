@@ -14,6 +14,7 @@ signal player_input(word:String) ##玩家输入
 #敌人
 signal updata_enemy_amount(enemy_amount:int)
 signal enemy_died(ward:String,translation:Array[String])
+signal kill_all_enemy_died()
 
 #摄像机震动
 signal request_cream_shakered(amplitude:int)

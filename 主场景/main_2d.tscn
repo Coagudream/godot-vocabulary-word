@@ -87,6 +87,8 @@ offset_bottom = -80.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
+theme_override_font_sizes/font_size = 25
+text = "清屏"
 
 [node name="GameStop" parent="RunLayer" unique_id=2118282580 instance=ExtResource("6_fc844")]
 mouse_filter = 2

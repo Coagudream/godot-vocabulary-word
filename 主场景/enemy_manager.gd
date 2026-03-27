@@ -11,7 +11,9 @@ func _ready() -> void:
 	await get_tree().create_timer(0).timeout
 	Events.player_input.connect(find_enemy_word_and_remove)
 	Events.round_start.connect(add_enemies)
+	Events.kill_all_enemy_died.connect(_kill_all_eneies)
 	child_order_changed.connect(updata_child_enemy)
+	
 	updata_child_enemy()
 
 ##添加一群敌人
@@ -97,10 +99,16 @@ func updata_child_enemy() -> void:
 	Events.updata_enemy_amount.emit(child_amount)
 
 
-##暂时（按下ctrl）刷新敌人
+func _kill_all_eneies() -> void:
+	for enemy in get_children():
+		if enemy is Enemy:
+			enemy.queue_free()
+
+
+##暂时（按下alt）刷新敌人
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("add_enemy"):
 		for enemy:Enemy in get_children():
-			enemy.die()
+			enemy.queue_free()
 		for i in range(5):
 			add_random_enemy()
